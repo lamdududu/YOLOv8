@@ -890,7 +890,7 @@ def plot_results(file="path/to/results.csv", dir="", segment=False, pose=False, 
             selected_data = data.iloc[:, columns_to_export]  # Chọn dữ liệu từ các cột đã chọn   
             # Ghi dữ liệu vào file TXT
             txt_file_path = save_dir / f"{f.stem}_preformance_.txt"  # Đường dẫn đến file TXT
-            selected_data.to_csv(txt_file_path, index=False, header=True, sep='\t')  # Ghi dữ liệu vào file TXT, sử dụng tab làm ký tự phân cách
+            selected_data.to_csv(txt_file_path, index=False, sep='\t')  # Ghi dữ liệu vào file TXT, sử dụng tab làm ký tự phân cách
 
 
 

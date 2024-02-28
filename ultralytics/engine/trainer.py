@@ -150,7 +150,7 @@ class BaseTrainer:
         self.tloss = None
         self.loss_names = ["Loss"]
         self.csv = self.save_dir / "results.csv"
-        self.csv = self.save_dir / "training_results.csv"
+       # self.csv = self.save_dir / "training_results.csv"
         self.plot_idx = [0, 1, 2]
 
         # Callbacks

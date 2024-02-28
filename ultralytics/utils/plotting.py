@@ -883,6 +883,17 @@ def plot_results(file="path/to/results.csv", dir="", segment=False, pose=False, 
         try:
             data = pd.read_csv(f)
             s = [x.strip() for x in data.columns]
+
+
+            
+            columns_to_export = [0, 4, 5, 6, 7]  # Chọn cột epoch, precision, recall, mAP50, mAP50-
+            selected_data = data.iloc[:, columns_to_export]  # Chọn dữ liệu từ các cột đã chọn   
+            # Ghi dữ liệu vào file TXT
+            txt_file_path = save_dir / f"{f.stem}_preformance_.txt"  # Đường dẫn đến file TXT
+            selected_data.to_csv(txt_file_path, index=False, header=False, sep='\t')  # Ghi dữ liệu vào file TXT, sử dụng tab làm ký tự phân cách
+
+
+
             x = data.values[:, 0]
             for i, j in enumerate(index):
                 y = data.values[:, j].astype("float")
